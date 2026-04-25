@@ -1,0 +1,42 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+export function Navbar() {
+  return (
+    
+   
+        <nav className='navbar navbar-expand-lg navbar-dark  modern-nav fixed-top p-3 d-flex justify-content-around'>
+        <div className='container'>
+        <h1 className='text-light' >Devarajan M</h1>
+        
+        <button className='navbar-toggler'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#navmenu'>
+            <span className='navbar-toggler-icon'></span>
+        </button>
+
+        <div className='collapse navbar-collapse'  id='navmenu' >
+            <ul className='navbar-nav ms-auto gap-3'>
+                <li className='nav-item'>
+                    <a href='#about' className='nav-link'>About</a>
+                </li>
+                <li className='nav-item'>
+                    <Link className='nav-link'>Skills</Link>
+                </li>
+                <li className='nav-item'>
+                    <Link className='nav-link'>Project</Link>
+                </li>
+                <li className='nav-item'>
+                    <Link className='nav-link'>Education</Link>
+                </li>
+                <li className='nav-item'>
+                    <Link className='nav-link'>Contact</Link>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+    
+  )
+}
+
