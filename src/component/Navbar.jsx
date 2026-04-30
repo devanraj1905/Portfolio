@@ -21,7 +21,7 @@ export function Navbar() {
                     <a href='#about' className='nav-link'>About</a>
                 </li>
                 <li className='nav-item'>
-                    <Link className='nav-link'>Skills</Link>
+                    <a  href='#skills' className='nav-link'>Skills</a>
                 </li>
                 <li className='nav-item'>
                     <Link className='nav-link'>Project</Link>

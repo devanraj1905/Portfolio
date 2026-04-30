@@ -2,7 +2,11 @@ import React from 'react'
 
 export function Project() {
   return (
-    <div>Project</div>
+    <div>
+      <div className='container'>
+
+      </div>
+    </div>
   )
 }
 
