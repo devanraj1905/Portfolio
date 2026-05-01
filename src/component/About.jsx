@@ -3,7 +3,7 @@ import image from "../assets/photo.jpeg"
 
 export function About() {
   return (
-    <div   >
+    <div>
       <section className='about ' id='about'  >
         <h2 className='text-center py-3'>About Me</h2>
         <div className=' align-items-center justify-content-center row mx-0 '>

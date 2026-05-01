@@ -52,9 +52,7 @@ export function Skill() {
 
     return (
 
-        <div id='skills'
-        style={{
-            padding:'60px 0'
+        <div id='skills'style={{ padding:'60px 0'
         }}>
 
             <div className='d-flex flex-column align-items-center text-center'>

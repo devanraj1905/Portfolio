@@ -95,10 +95,10 @@
   }
 
   section {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 80px;
   }
 
-  .profile {}
+
 
   .main-image {
     position: relative;
@@ -177,6 +177,7 @@
   #skills{
      background:linear-gradient(to bottom, #0a1628, #020617);
      min-height: calc(100vh -  80px);
+         scroll-margin-top: 80px;
   }
  .btn-skill{
 width: 100px;
@@ -194,4 +195,65 @@ width: 100px;
     width: 60px;
     background:linear-gradient(to left,#121c35,white,#121c35);
 
+}
+.project-card{
+  width: 250px;
+  border: 1px solid black;
+  transition: all 0.3s ease-out;  
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px black;
+  
+}
+.img-card{
+  width:  250px;
+  height: 200px;
+  box-shadow: 0 0 5px 1px black;
+   border-radius: 10px;
+  
+}
+.img-card img{
+  width: 100%;
+  height: 100%;
+   border-radius: 10px;
+ 
+}
+#projects{
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 100px;
+  justify-content: center;
+  scroll-margin-top: 80px;
+   min-height: calc(100vh -  80px);
+}
+.text-overflow{
+  display: -webkit-box;
+  -webkit-line-clamp:5;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+
+}
+
+.pr-title{
+  position: relative;
+}
+
+.pr-title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    transform: translateX(20px);
+    height: 4px;    
+    width: 100px;
+    background:linear-gradient(to left,white,#3b82f6,white);
+
+}
+
+.project-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px 3px #1e293b ;
+  
 }
