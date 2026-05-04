@@ -35,7 +35,7 @@ export function Skill() {
   { name: 'HTML',       icon: <FaHtml5/> , cat: 'Frontend', color: '#3b82f6' },
   { name: 'CSS',        icon:<FaCss3Alt/>  , cat: 'Frontend', color: '#3b82f6' },
   { name: 'Bootstrap',  icon:<FaBootstrap /> , cat: 'Frontend', color: '#3b82f6' },
-  { name: 'Git',        icon:<FaGitAlt/>  , cat: 'Tools',   color: '#f59e0b' }, 
+  { name: 'Git',        icon:   <FaGitAlt/>  , cat: 'Tools',   color: '#f59e0b' }, 
   { name: 'GitHub',     icon:<FaGithub/>  , cat: 'Tools',   color: '#f59e0b' },
   { name: 'VS Code',    icon:<VscVscode /> , cat: 'Tools',   color: '#f59e0b' }, 
   { name: 'REST API',   icon:<TbApi/>  , cat: 'Frontend',  color: '#10b981' }, 
@@ -52,7 +52,7 @@ export function Skill() {
 
     return (
 
-        <div id='skills'style={{ padding:'60px 0'
+        <div id='skills'style={{     padding:'60px 0'
         }}>
 
             <div className='d-flex flex-column align-items-center text-center'>
