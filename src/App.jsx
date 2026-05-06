@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 
 import './App.css'
-import { About, Ed, Education, Hero, Navbar, Project, Skill } from './component'
+import { About, Contact, Education, Hero, Navbar, Project, Skill } from './component'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <Skill />
         <Project/>
         <Education/>
-        <Ed/>
+        <Contact/>
       </main>
     </>
   )

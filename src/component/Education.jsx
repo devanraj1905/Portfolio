@@ -1,398 +1,208 @@
-// import React from 'react'
+import React, { useState } from 'react'
 
-// export function Education() {
-//     return (
-//         // <div className='d-flex align-items-center mx-auto vh-100'>
-//         //     <div className='container'>
-//         //         <h1>Education</h1>
-//         //         <div className=''>
-//         //             <p className='btn btn-info'>2022 - 2026</p>
-//         //             <div className='btn border-dark'>
-//         //                 <h3>B.Tech Artificial Intelligence and Data Science</h3>
-//         //                 <p className='text-start'>Gnanamani College of Technology,Namakkal</p>
-//         //             </div>
-//         //         </div>
-//         //     </div>
-//         // </div>
-//     )
-// }
+function StepTag({ onStepClick, active }) {
+  const steps = [
+    { year: '2020', icon: 'bi-check', state: 'done' },
+    { year: '2022', icon: 'bi-check', state: 'done' },
+    { year: '2026', icon: 'bi-check', state: 'progress' },
+    { year: 'Next', icon: 'bi-dot', state: 'goal' }
+  ]
 
+  const lineWidth = ['15%', '40%', '60%', '100%']
+  function handleClick(i) {
 
-import React, { useEffect, useRef, useState } from 'react'
+    onStepClick(i)
+  }
 
-const steps = [
-  {
-    year: '2019',
-    title: '10th Standard',
-    school: 'State Board',
-    grade: '85%',
-    status: 'done',
-    color: '#3b82f6',
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5">
-        <polyline points="20 6 9 17 4 12" />
-      </svg>
-    ),
-  },
-  {
-    year: '2021',
-    title: '12th Standard',
-    school: 'State Board',
-    grade: '89%',
-    status: 'done',
-    color: '#3b82f6',
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5">
-        <polyline points="20 6 9 17 4 12" />
-      </svg>
-    ),
-  },
-  {
-    year: '2024',
-    title: 'B.E. Computer Science',
-    school: 'Anna University · Chennai',
-    grade: 'CGPA 8.2',
-    status: 'done',
-    color: '#3b82f6',
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5">
-        <polyline points="20 6 9 17 4 12" />
-      </svg>
-    ),
-  },
-  {
-    year: 'Next',
-    title: 'Full Stack Developer',
-    school: 'Self-driven · In Progress',
-    grade: 'Goal',
-    status: 'upcoming',
-    color: '#f59e0b',
-    icon: null,
-  },
-]
-
-function CheckIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5">
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
+    <div className='d-flex w-40 ' >
+      <div className='d-flex line-div my-5' 
+      >
+        <div
+          style={{
+            position: 'absolute',
+            zIndex: 2,
+            top: '30%',
+            width: lineWidth[active],
+            height: '2px',
+            background: 'linear-gradient(to right, #3b82f6, #f59e0b)',
+            transition: 'all 0.7s ease',
+          }} />
+
+
+        <ul className='d-flex w-100 list-unstyled justify-content-around mb-0'
+          style={{
+            fontSize: '15px',
+            zIndex: '5',
+            position: 'relative'
+          }} >
+          {
+            steps.map((step, i) => (
+              <li key={i}
+                onClick={() => handleClick(i)}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '8px',
+                }}>
+                <div
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '50%',
+                    background: step.state === 'done' ? '#3b82f6' : '#121c35',
+                    border: step.state === 'goal'
+                      ? '2px dashed #f59f0b'
+                      : `2px solid ${step.state === 'done' ? '#3b82f6' : '#f59f0b'}`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    justifyContent: 'center',
+                    color: step.state === 'done' ? ' #fff' : '#f59f0b ',
+                    fontSize: step.icon === 'bi-check' ? '24px' : '16px',
+                    boxShadow: active === i ? '0 0 16px #3b82f680' : 'none',
+                    transition: ' all 0.5s ease'
+                  }}> <i className={`bi ${step.icon}`}
+                    style={
+                      {
+                        animation: step.state === 'goal' ? 'zoom 2s infinite ease-out ' : 'none',
+                      }
+                    }></i>
+                </div>
+                <span style={{
+                  fontSize: '10px', fontWeight: 600,
+                  color: step.state === 'done' ? '#3b82f6' : '#f59f0b',
+                  transition: 'color 0.3s ease',
+                }}>
+                  {step.year}
+                </span>
+              </li>
+
+            ))
+          }
+        </ul>
+
+      </div >
+    </div >
   )
 }
 
-function StepNode({ step, index, active, onClick }) {
-  const isDone = step.status === 'done'
-  const isUpcoming = step.status === 'upcoming'
-  const isActive = active === index
+
+function EducationTag({ educations }) {
 
   return (
-    <div
-      onClick={() => onClick(index)}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '10px',
-        flex: 1,
-        cursor: 'pointer',
-        position: 'relative',
-        zIndex: 1,
-      }}
-    >
-      {/* Circle */}
-      <div style={{
-        width: '44px',
-        height: '44px',
-        borderRadius: '50%',
-        background: isDone ? step.color : 'transparent',
-        border: isUpcoming
-          ? `2px dashed ${step.color}`
-          : `2px solid ${isActive ? step.color : step.color + '60'}`,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        transition: 'all 0.3s ease',
-        boxShadow: isActive ? `0 0 20px ${step.color}50` : 'none',
-        flexShrink: 0,
-      }}>
-        {isDone ? (
-          <CheckIcon />
-        ) : (
-          <div style={{
-            width: '10px',
-            height: '10px',
-            borderRadius: '50%',
-            background: step.color,
-            animation: 'pulse 2s infinite',
-          }} />
-        )}
-      </div>
+    <div className='status-tag  my-5  ' style={{
+      border: `1px solid ${educations.status === 'Completed' ? '#3b83f62b' : '#f59f0b2b'}`,
+      background: `${educations.status === 'Completed' ? '#0d1f3c78' : '#58411b44'}`,
+      borderRadius: '20px',
+      margin: '5px',
+      animation: 'fadin  0.1s ease'
 
-      {/* Year badge */}
-      <div style={{
-        fontSize: '11px',
-        fontWeight: 600,
-        color: step.color,
-        fontFamily: "'Plus Jakarta Sans', sans-serif",
-        letterSpacing: '1px',
-      }}>
-        {step.year}
+    }} >
+      <div className='p-3 row'> 
+        <div className='col-lg-8 col-10'>
+          <small className=''
+            style={{
+              color: ` ${educations.status === 'Completed' ? '#3b83f6' : '#f59f0b'}`,
+              fontSize: '10px',
+              fontFamily: 'Arial',
+              letterSpacing: '2px',
+              animation: 'zoom 0.1s ease',
+            }}>{
+              educations.status=== 'Completed'? <i class="bi bi-check2"></i>:<i class="bi bi-arrow-clockwise"></i>
+            }{educations.status.toUpperCase()}</small>
+          <h4 style={{
+            fontWeight: 'bold',
+            padding: '10px 0',
+
+          }}>{educations.class}</h4>
+          <p
+            style={
+              {
+                color: '#64748b',
+                fontSize: '12px',
+
+
+              }
+            }>{educations.university}</p></div>
+        <div className='col-lg-3 col-10'>
+          <div style={{
+            border: `1px solid ${educations.status === 'Completed' ? '#3b82f62b' : '#f59e0b2b'}`,
+            background: educations.status === 'Completed' ? '#0d347438' : '#58411b38',
+            borderRadius: '10px',
+            color: educations.status === 'Completed' ? '#3b82f6' : '#f59e0b',
+            padding: '10px',
+            fontSize: '20px',
+            fontWeight: '500',
+            letterSpacing: '2px',
+            textAlign: 'center',
+          }}>
+            {educations.percentage}
+            <p style={{ fontSize: '14px', color: '#64748b', margin: 0, marginTop: '5px' }}>
+              {educations.percentage === 'Goal' ? 'Next' : 'Score'}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
   )
 }
 
 export function Education() {
-  const [active, setActive] = useState(2)
-  const [visible, setVisible] = useState(false)
-  const ref = useRef(null)
+  const education = [
+    { class: '10th Standard', university: 'State Board', status:'Completed', percentage: '60%', year: '2020' },
+    { class: '12th Standard', university: 'State Board', status: 'Completed', percentage: '63%', year: '2022' },
+    { class: 'B.Tech Artificial Intelligence and Data Science', university: 'Anna University, Chennai', status: 'In-Progress', percentage: 'CGPA 7.35', year: '2026' },
+    { class: 'FullStack Developer', university: 'Self-Driven', status: 'In-Progress', percentage: 'Goal' },
+  ]
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.2 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
 
-  const current = steps[active]
+  // const collection = ['10th Standard', '12th Standard', 'B.Tech Artificial Intelligence and Data Science', 'FullStack Developer']
+  const [active, setActive] = useState(0)
+  // const filtered = education.filter(s => s.class === active)
 
   return (
-    <section
-      id='education'
-      ref={ref}
-      style={{
-        padding: '80px 0',
-        background: 'linear-gradient(160deg, #0a1628 0%, #020617 100%)',
-        position: 'relative',
-        overflow: 'hidden',
-      }}
-    >
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(0.8); }
-        }
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(16px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        .detail-card {
-          animation: fadeUp 0.35s ease forwards;
-        }
-      `}</style>
-
-      {/* Ambient orb */}
-      <div style={{
-        position: 'absolute', top: '20%', right: '-10%',
-        width: '300px', height: '300px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-
-      <div className='container' style={{ position: 'relative', zIndex: 1 }}>
-
-        {/* Heading */}
-        <div className='text-center mb-5'>
-          <p style={{
-            fontSize: '11px', fontWeight: 600,
-            letterSpacing: '4px', textTransform: 'uppercase',
-            color: '#3b82f6', marginBottom: '12px',
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-          }}>
-            My Journey
-          </p>
-          <h2 style={{
-            fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 700,
-            color: '#ffffff', display: 'inline-block',
-            position: 'relative', marginBottom: '12px',
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-          }}>
-            Education
-            <span style={{
-              position: 'absolute', bottom: '-8px',
-              left: '50%', transform: 'translateX(-50%)',
-              width: '50px', height: '3px',
-              background: '#3b82f6', borderRadius: '2px', display: 'block',
-            }} />
-          </h2>
-        </div>
-
-        {/* Stepper */}
-        <div style={{
-          maxWidth: '700px',
-          margin: '0 auto',
-          opacity: visible ? 1 : 0,
-          transform: visible ? 'translateY(0)' : 'translateY(24px)',
-          transition: 'all 0.6s ease',
-        }}>
-
-          {/* Step nodes + connecting line */}
-          <div style={{ position: 'relative', padding: '0 20px', marginBottom: '40px' }}>
-
-            {/* Progress line */}
-            <div style={{
-              position: 'absolute',
-              top: '22px',
-              left: 'calc(20px + 22px)',
-              right: 'calc(20px + 22px)',
-              height: '2px',
-              background: '#1e293b',
-              zIndex: 0,
-            }}>
-              {/* Filled portion */}
-              <div style={{
-                height: '100%',
-                width: visible ? `${(active / (steps.length - 1)) * 100}%` : '0%',
-                background: 'linear-gradient(to right, #3b82f6, #f59e0b)',
-                borderRadius: '2px',
-                transition: 'width 0.8s cubic-bezier(0.22,1,0.36,1)',
-              }} />
-            </div>
-
-            {/* Step nodes */}
-            <div style={{ display: 'flex', position: 'relative' }}>
-              {steps.map((step, i) => (
-                <StepNode
-                  key={i}
-                  step={step}
-                  index={i}
-                  active={active}
-                  onClick={setActive}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Detail card */}
-          <div
-            key={active}
-            className='detail-card'
-            style={{
-              background: `rgba(${current.color === '#3b82f6' ? '59,130,246' : '245,158,11'}, 0.06)`,
-              border: `1px solid ${current.color}25`,
-              borderRadius: '16px',
-              padding: '28px 32px',
-              backdropFilter: 'blur(10px)',
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            {/* Corner glow */}
-            <div style={{
-              position: 'absolute', top: '-30px', right: '-30px',
-              width: '120px', height: '120px', borderRadius: '50%',
-              background: `radial-gradient(circle, ${current.color}20 0%, transparent 70%)`,
-              pointerEvents: 'none',
-            }} />
-
-            <div style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start',
-              flexWrap: 'wrap',
-              gap: '12px',
-            }}>
-              <div>
-                {/* Status */}
-                <span style={{
-                  fontSize: '10px', fontWeight: 600,
-                  letterSpacing: '2px', textTransform: 'uppercase',
-                  color: current.color,
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                }}>
-                  {current.status === 'done' ? '✓ Completed' : '⟳ In Progress'}
-                </span>
-
-                {/* Title */}
-                <h3 style={{
-                  fontSize: 'clamp(18px, 3vw, 24px)',
-                  fontWeight: 700, color: '#ffffff',
-                  margin: '8px 0 4px',
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                }}>
-                  {current.title}
-                </h3>
-
-                {/* School */}
-                <p style={{
-                  fontSize: '14px', color: '#64748b',
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  margin: 0,
-                }}>
-                  {current.school}
-                </p>
-              </div>
-
-              {/* Grade badge */}
-              <div style={{
-                background: `${current.color}15`,
-                border: `1px solid ${current.color}30`,
-                borderRadius: '12px',
-                padding: '12px 20px',
-                textAlign: 'center',
-                flexShrink: 0,
-              }}>
-                <div style={{
-                  fontSize: '22px', fontWeight: 700,
-                  color: current.color,
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  lineHeight: 1,
-                }}>
-                  {current.grade}
-                </div>
-                <div style={{
-                  fontSize: '10px', color: '#475569',
-                  marginTop: '4px', letterSpacing: '1px',
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                }}>
-                  {current.status === 'done' ? 'Score' : 'Target'}
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation hint */}
-            <p style={{
-              fontSize: '11px', color: '#334155',
-              marginTop: '20px', marginBottom: 0,
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              letterSpacing: '0.5px',
-            }}>
-              Click any step above to view details
-            </p>
-          </div>
-
-          {/* Step labels row (visible on mobile) */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            marginTop: '16px',
-            flexWrap: 'wrap',
-            gap: '8px',
-          }}>
-            {steps.map((step, i) => (
-              <button
-                key={i}
-                onClick={() => setActive(i)}
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  fontSize: '11px',
-                  color: active === i ? step.color : '#334155',
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: active === i ? 600 : 400,
-                  cursor: 'pointer',
-                  transition: 'color 0.2s ease',
-                  padding: '4px 8px',
-                }}
-              >
-                {step.title}
-              </button>
-            ))}
-          </div>
-
-        </div>
+    <div id='education'>
+      <div>
+        <p className='text-primary text-center'
+          style={{
+            letterSpacing: '2px',
+            paddingTop: '15px',
+          }}
+        >MY JOURNEY</p>
+        <h2 className='edu-title'>Education</h2>
       </div>
-    </section>
+
+      <StepTag onStepClick={(i) => setActive(i)} active={active} />
+      <div className='d-flex align-items-center justify-content-center' key={active}>
+        <EducationTag educations={education[active]} />
+      </div>
+
+
+      <div className='d-flex flex-wrap gap-4' >
+        {
+          education.map((cat, i) => (
+            <p className=' d-flex ' onClick={() => (setActive(i))} key={i}
+              active={active}
+              style={{
+                color: active=== i ? '#3b82f6' : '#94a3b8',
+                fontSize: '12px',
+                outline: 'none',
+                cursor: 'pointer',
+
+                fontWeight: active === i ? '600' : '400'
+              }}
+            >{cat.class}</p>
+          ))
+        }
+
+      </div>
+
+
+
+    </div>
+
   )
 }

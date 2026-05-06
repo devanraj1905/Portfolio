@@ -15,16 +15,16 @@ export function Project() {
   return (
     <div id="projects">
 
-      <div className="container d-flex flex-column  align-items-center ">
+      <div className="d-flex flex-column  justify-content-center  align-items-center  ">
 
         <h1 className=" mb-5 pr-title">Projects</h1>
         <p className='text-secondary mb-5'>Projects showcasing my frontend development skills and real-world API integrations.</p>
 
-        <div className="d-flex gap-5 ">
+        <div className="d-flex gap-5 flex-wrap justify-content-center ">
 
           {project.map((pct) => (
 
-            <div className="4" key={pct.name}>
+            <div className=" " key={pct.name}>
 
               <div className="project-card">
 
@@ -62,4 +62,3 @@ export function Project() {
   )
 }
 
-// col-12 col-md-6 col-lg-4

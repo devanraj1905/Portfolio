@@ -4,6 +4,6 @@ export { Skill } from "./Skill"
 export { Project } from "./Project"
 export { Contact } from "./Contact"
 export { About } from "./About"
-export {Education} from "./Education"
+
 export { Hero } from "./Hero"
-export { Ed } from "./Ed"
+export { Education } from "./Education"
