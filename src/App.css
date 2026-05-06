@@ -171,9 +171,10 @@
     position: absolute;
     bottom: 2px;
     height: 4px;
-    transform: translateX(15px);
-    width: 100px;
-    background: linear-gradient(to left, white, #3b82f6, white);
+    transform: translateX(30px);
+    width: 70px;
+    border-radius: 50px;
+    background: #3b82f6;
 
 
   }
@@ -198,9 +199,9 @@
     left: 0;
     border-radius: 50px;
     bottom: -10px;
-    transform: translateX(25px);
+    transform: translateX(15px);
     height: 4px;
-    width: 40px;
+    width: 70px;
     background: #3b82f6;
 
   }
@@ -234,7 +235,7 @@
   #projects {
     display: flex;
     align-items: center;
-    
+    color: #1e293b;
     justify-content: center;
     scroll-margin-top: 80px;
     min-height: calc(100vh - 80px);
@@ -282,6 +283,11 @@
     min-height: calc(100vh - 85px);
 
   }
+  #contact{
+     scroll-margin-top: 95px;
+     
+    min-height: calc(100vh - 200px);
+  }
   .edu-title{
     position: relative;
   }
@@ -297,7 +303,19 @@
     background: #3b82f6;
 
   }
-
+  .cont-title{
+    position: relative;
+  }
+.cont-title::before{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    height: 4px;
+    transform: translateX(40px);
+    width: 70px;
+    border-radius: 50px;
+    background: #3b82f6;
+}
   .w-40 {
     width: 90%;
   }
@@ -335,6 +353,10 @@
     background: #2b385a;
 
 
+
+  }
+  #contact{
+      min-height: calc(100vh - 100px);
 
   }
 

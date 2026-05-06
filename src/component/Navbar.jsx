@@ -30,7 +30,7 @@ export function Navbar() {
                     <a href='#education'  className='nav-link'>Education</a>
                 </li>
                 <li className='nav-item'>
-                    <Link className='nav-link'>Contact</Link>
+                    <a href='#contact' className='nav-link'>Contact</a>
                 </li>
             </ul>
             </div>
