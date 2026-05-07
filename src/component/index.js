@@ -1,5 +1,5 @@
 export { Navbar } from "./Navbar"
-export { Footer } from "./Footer"
+
 export { Skill } from "./Skill"
 export { Project } from "./Project"
 export { Contact } from "./Contact"
