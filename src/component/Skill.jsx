@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BsDatabase } from 'react-icons/bs';
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub ,FaBootstrap, FaJava } from "react-icons/fa";
-import { SiJaeger, SiJavascript, SiMysql, SiSqlite } from "react-icons/si";
+import { SiJaeger, SiJavascript, SiMysql, SiSqlite, SiTailwindcss } from "react-icons/si";
 import { TbApi } from 'react-icons/tb';
 import { VscVscode } from "react-icons/vsc";
 
@@ -33,6 +33,7 @@ export function Skill() {
   { name: 'React',      icon:<FaReact/>, cat: 'Frontend', color: '#3b82f6' },
   { name: 'JavaScript', icon: <SiJavascript/> , cat: 'Frontend', color: '#3b82f6' },
   { name: 'HTML',       icon: <FaHtml5/> , cat: 'Frontend', color: '#3b82f6' },
+  { name: 'Tailwind CSS',       icon: <SiTailwindcss/> , cat: 'Frontend', color: '#3b82f6' },
   { name: 'CSS',        icon:<FaCss3Alt/>  , cat: 'Frontend', color: '#3b82f6' },
   { name: 'Bootstrap',  icon:<FaBootstrap /> , cat: 'Frontend', color: '#3b82f6' },
   { name: 'Git',        icon:   <FaGitAlt/>  , cat: 'Tools',   color: '#f59e0b' }, 
