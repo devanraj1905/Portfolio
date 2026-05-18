@@ -25,7 +25,7 @@ export function Contact() {
     },
     {
       media: 'Resume',
-      link: 'https://drive.google.com/file/d/1FcZg-Z156osyNsTHtDTBSOtNPCgN6QWx/view?usp=drive_link',
+      link: 'https://drive.google.com/file/d/1tJZJpgvZ66Xjwx2nCsUE7TXTocY2GJ2a/view?usp=drive_link',
       id: 'Devarajan_Resume',
       icon: <i className="fa-solid fa-arrow-down"></i>,
       color: '#3bf64e3f'
