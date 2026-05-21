@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Reveal } from '../Reveal'
 
 function StepTag({ onStepClick, active }) {
   const steps = [
@@ -110,7 +111,7 @@ function EducationTag({ educations }) {
               letterSpacing: '2px',
               animation: 'zoom 0.1s ease',
             }}>{
-              educations.status=== 'Completed'? <i class="bi bi-check2"></i>:<i class="bi bi-arrow-clockwise"></i>
+              educations.status=== 'Completed'? <i className="bi bi-check2"></i>:<i className="bi bi-arrow-clockwise"></i>
             }{educations.status.toUpperCase()}</small>
           <h4 style={{
             fontWeight: 'bold',
@@ -164,7 +165,7 @@ export function Education() {
   // const filtered = education.filter(s => s.class === active)
 
   return (
-    <div id='education'>
+   <div id='education'>
       <div>
         <p className='text-primary text-center'
           style={{

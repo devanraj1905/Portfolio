@@ -6,6 +6,8 @@ import mart from '/src/assets/freshmart.png'
 import foodie from '/src/assets/foodie.png'
 import { FaFileVideo, FaGithub } from 'react-icons/fa'
 import { SiKdenlive } from 'react-icons/si'
+import { motion } from 'framer-motion'
+import { Reveal } from '../Reveal'
 export function Project() {
 
   const project = [
@@ -17,12 +19,12 @@ export function Project() {
   return (
     <div id="projects">
 
-      <div className="d-flex flex-column  justify-content-center  align-items-center  ">
+      <Reveal><div className="d-flex flex-column  justify-content-center  align-items-center  ">
 
         <h1 className=" mb-5 pr-title">Projects</h1>
         <p className='text-secondary mb-5'>Projects showcasing my frontend development skills and real-world API integrations.</p>
 
-        <div className="d-flex gap-5 flex-wrap justify-content-center ">
+       <Reveal y={100} delay={0.5} > <div className="d-flex gap-5 flex-wrap justify-content-center ">
 
           {project.map((pct) => (
 
@@ -36,7 +38,8 @@ export function Project() {
 
                 <div className="p-3">
 
-                  <p className="fw-bold">{pct.icon}{pct.name}</p>
+                 
+                 <p className="fw-bold">{pct.icon}{pct.name}</p>
 
                   <p className='text-overflow'>{pct.description}</p>
 
@@ -56,9 +59,10 @@ export function Project() {
 
           ))}
 
-        </div>
+        </div></Reveal>
 
       </div>
+      </Reveal>
 
     </div>
   )

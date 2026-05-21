@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Reveal } from '../Reveal'
 export function Navbar() {
   return (
     
    
         <nav className='navbar navbar-expand-lg navbar-dark  modern-nav fixed-top p-3 d-flex justify-content-around'>
         <div className='container'>
-        <h1 className='text-light' >Devarajan M</h1>
+       <Reveal x={-100} delay={0.5}> <h1 className='text-light' >Devarajan M</h1></Reveal>
         
         <button className='navbar-toggler'
         type='button'

@@ -4,6 +4,10 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
 
+
+  }
+  body{
+    cursor: url("/src/assets/cursors.cur"),auto;
   }
 
 
@@ -63,6 +67,7 @@
 
   .ab-content {
     position: relative;
+    padding: 10px 0;
   }
 
   .ab-content::after {
@@ -70,9 +75,11 @@
     position: absolute;
     bottom: -2px;
     left: 0;
-    width: 100%;
+    z-index: 10;
+   animation: loading 1.5s ease forwards;
     height: 2px;
     background: linear-gradient(to right, #121c35, #3b82f6, white);
+  
 
   }
 
@@ -80,10 +87,20 @@
     content: "";
     position: absolute;
     top: -2px;
+    z-index: 10;
     left: 0;
-    width: 100%;
+    animation: loading 1.5s ease forwards;
     height: 2px;
     background: linear-gradient(to left, #121c35, #3b82f6, white);
+  }
+  @keyframes loading{
+    from{
+      width: 0%;
+    }
+    to{
+      width: 100%;
+     
+    }
   }
 
   .ab-content {
@@ -113,13 +130,13 @@
   .main-image .profile {
     width: 100%;
     display: block;
-    transform: scale(1.05);
+    transform: scale(1.10);
     transition: transform 0.3s ease;
 
   }
 
   .main-image:hover .profile {
-    transform: scale(1.10);
+    transform: scale(1.15);
   }
 
   .img-title {

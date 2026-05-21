@@ -1,4 +1,5 @@
 import React from 'react'
+import { Reveal } from '../Reveal'
 
 export function Contact() {
   const details = [
@@ -33,7 +34,7 @@ export function Contact() {
   ]
   return (
     <div className=' position-relative' id='contact'>
-
+      
       <div>
         <h1 className='text-center my-3 cont-title'>Contact</h1>
 
@@ -49,6 +50,7 @@ export function Contact() {
       }} >
 
         <h4 className='py-3 '>Get In Touch</h4>
+        <Reveal delay={1}>
        <div className='d-flex flex-wrap justify-content-center'
           style={{
 
@@ -90,6 +92,7 @@ export function Contact() {
             ))
           }
         </div>
+        </Reveal>
       </div>
     
 <footer style={{
