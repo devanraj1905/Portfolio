@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BsDatabase } from 'react-icons/bs';
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaBootstrap, FaJava } from "react-icons/fa";
-import { SiJaeger, SiJavascript, SiMysql, SiSqlite, SiTailwindcss } from "react-icons/si";
+import { SiJaeger, SiJavascript, SiMongodb, SiMysql, SiSqlite, SiTailwindcss } from "react-icons/si";
 import { TbApi } from 'react-icons/tb';
 import { VscVscode } from "react-icons/vsc";
 import { Reveal } from '../Reveal';
@@ -46,7 +46,7 @@ export function Skill() {
         { name: 'REST API', icon: <TbApi />, cat: 'Frontend', color: '#10b981' },
         { name: 'Java', icon: <FaJava />, cat: 'Programming', color: '#10b981' },
 
-        { name: 'SQL', icon: <BsDatabase />, cat: 'Database', color: '#f59e0b' },
+        { name: 'Mongo DB', icon: <SiMongodb/> , cat: 'Database', color: '#f59e0b' },
         { name: 'MySQL', icon: <SiMysql />, cat: 'Database', color: '#f59e0b' },
     ]
     const CAT = ['All', 'Frontend', 'Programming', 'Database', 'Tools']

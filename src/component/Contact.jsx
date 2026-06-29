@@ -26,7 +26,7 @@ export function Contact() {
     },
     {
       media: 'Resume',
-      link: 'https://drive.google.com/file/d/1MIYuSzs16Ubzl3r-WdhaMBxgRd88h_PT/view',
+      link: 'https://drive.google.com/file/d/1WGfOiC9MEJTtImPZuKozHQSFvaBR5tlu/view?usp=drive_link',
       id: 'Devarajan_Resume',
       icon: <i className="fa-solid fa-arrow-down"></i>,
       color: '#3bf64e3f'
@@ -50,7 +50,7 @@ export function Contact() {
       }} >
 
         <h4 className='py-3 '>Get In Touch</h4>
-        <Reveal delay={1}>
+        <Reveal delay={0.7}>
        <div className='d-flex flex-wrap justify-content-center'
           style={{
 
