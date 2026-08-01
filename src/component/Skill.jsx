@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BsDatabase } from 'react-icons/bs';
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaBootstrap, FaJava } from "react-icons/fa";
-import { SiJaeger, SiJavascript, SiMongodb, SiMysql, SiSqlite, SiTailwindcss } from "react-icons/si";
+import { SiExpress, SiJavascript, SiMongodb, SiMysql, SiNodedotjs, SiSqlite, SiTailwindcss } from "react-icons/si";
 import { TbApi } from 'react-icons/tb';
 import { VscVscode } from "react-icons/vsc";
 import { Reveal } from '../Reveal';
@@ -34,7 +34,7 @@ function SkillTag({ skill }) {
 }
 export function Skill() {
     const skills = [
-        { name: 'React', icon: <FaReact />, cat: 'Frontend', color: '#3b82f6' },
+        { name: 'React.js', icon: <FaReact />, cat: 'Frontend', color: '#3b82f6' },
         { name: 'JavaScript', icon: <SiJavascript />, cat: 'Frontend', color: '#3b82f6' },
         { name: 'HTML', icon: <FaHtml5 />, cat: 'Frontend', color: '#3b82f6' },
         { name: 'Tailwind CSS', icon: <SiTailwindcss />, cat: 'Frontend', color: '#3b82f6' },
@@ -43,13 +43,15 @@ export function Skill() {
         { name: 'Git', icon: <FaGitAlt />, cat: 'Tools', color: '#f59e0b' },
         { name: 'GitHub', icon: <FaGithub />, cat: 'Tools', color: '#f59e0b' },
         { name: 'VS Code', icon: <VscVscode />, cat: 'Tools', color: '#f59e0b' },
-        { name: 'REST API', icon: <TbApi />, cat: 'Frontend', color: '#10b981' },
+        { name: 'REST API', icon: <TbApi />, cat: 'Tools', color: '#f59e0b' },
         { name: 'Java', icon: <FaJava />, cat: 'Programming', color: '#10b981' },
+        { name: 'Node.js', icon: <SiNodedotjs />, cat: 'Backend', color: '#10b981' },
+        { name: 'Express.js', icon: <SiExpress />, cat: 'Backend', color: '#10b981' },
 
         { name: 'Mongo DB', icon: <SiMongodb/> , cat: 'Database', color: '#f59e0b' },
         { name: 'MySQL', icon: <SiMysql />, cat: 'Database', color: '#f59e0b' },
     ]
-    const CAT = ['All', 'Frontend', 'Programming', 'Database', 'Tools']
+    const CAT = ['All', 'Frontend', 'Programming', 'Backend', 'Database', 'Tools']
 
     const [active, setActive] = useState('All')
     const filtered = active === 'All' ? skills : skills.filter(s => s.cat === active)
@@ -96,28 +98,7 @@ export function Skill() {
                     <Reveal scale={0.2} x={-100} delay={0.2} key={skill.name} ><SkillTag key={skill.name} skill={skill} /></Reveal>
                 ))}
             </div>
-            <div className='text-center mt-5'>
-                <p style={{ color: '#475569', fontSize: '13px', letterSpacing: '2px' }}>
-                    CURRENTLY LEARNING
-                </p>
-                <p className="text-secondary">
-                    Expanding toward full-stack development
-                </p>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '10px' }}>
-                    {['Node.js', 'Express.js', 'MongoDB'].map(skill => (
-                        <span key={skill} style={{
-                            border: '1px dashed #3b82f640',
-                            color: '#3b82f6',
-                            padding: '4px 14px',
-                            borderRadius: '50px',
-                            fontSize: '13px',
-                        }}>
-                            {skill}
-                        </span>
-                    ))}
-
-                </div>
-            </div></Reveal>
+</Reveal>
 
 
         </div>

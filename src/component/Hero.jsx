@@ -10,14 +10,13 @@ export function Hero() {
          <Reveal delay={1}>  <strong className='lead'>Hi, I'M</strong></Reveal>
           <Reveal duration={1} delay={1.5} opacity={0} ><div className='d-flex '> <h1 className='me-2'>Devarajan</h1><h1 className='text-primary'>M</h1></div></Reveal> 
           <Reveal delay={2}>  <h3 className='text-primary'><TypeAnimation  sequence={[
+            "MERN Stack Developer...",
+            2000,
              "Frontend Developer...",
-              2000,
-              "Software Developer...",
               2000,
               "React Developer...",
               2000,
-              "API-Based Application Builder...",
-              2000, 
+           
             ]} 
             speed={50}
             repeat={Infinity}

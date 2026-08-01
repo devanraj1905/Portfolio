@@ -266,6 +266,14 @@
     text-overflow: ellipsis;
 
   }
+  .text-overflow1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+
+  }
 
   .pr-title {
     position: relative;
