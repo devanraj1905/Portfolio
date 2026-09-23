@@ -47,7 +47,6 @@ export function Skill() {
         { name: 'Java', icon: <FaJava />, cat: 'Programming', color: '#10b981' },
         { name: 'Node.js', icon: <SiNodedotjs />, cat: 'Backend', color: '#10b981' },
         { name: 'Express.js', icon: <SiExpress />, cat: 'Backend', color: '#10b981' },
-
         { name: 'Mongo DB', icon: <SiMongodb/> , cat: 'Database', color: '#f59e0b' },
         { name: 'MySQL', icon: <SiMysql />, cat: 'Database', color: '#f59e0b' },
     ]

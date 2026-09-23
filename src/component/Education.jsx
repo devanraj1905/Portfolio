@@ -5,7 +5,7 @@ function StepTag({ onStepClick, active }) {
   const steps = [
     { year: '2020', icon: 'bi-check', state: 'done' },
     { year: '2022', icon: 'bi-check', state: 'done' },
-    { year: '2026', icon: 'bi-check', state: 'progress' },
+    { year: '2026', icon: 'bi-check', state: 'done' },
     { year: 'Next', icon: 'bi-dot', state: 'goal' }
   ]
 
